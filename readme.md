@@ -1,6 +1,7 @@
 # power-off
 
 > Cross OS power-off.
+> With support for shutdown and reboot
 
 
 ## Install
@@ -15,7 +16,13 @@ $ npm install --save power-off
 ```js
 var powerOff = require('power-off');
 
-powerOff( function (err, stderr, stdout) {
+powerOff.shutdown( function (err, stderr, stdout) {
+	if(!err && !stderr) {
+		console.log(stdout);
+	}
+});
+
+powerOff.reboot( function (err, stderr, stdout) {
 	if(!err && !stderr) {
 		console.log(stdout);
 	}
