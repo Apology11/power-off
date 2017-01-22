@@ -8,9 +8,9 @@ module.exports.shutdown = function (cb) {
 	var cmd = '';
 
 	if(isLinux() || isOsx()) {
-		cmd = 'sudo shutdown -h now';
+		cmd = 'sudo shutdown -h -t 1';
 	} else if(isWindows()) {
-		cmd = 'shutdown -s -t 0';
+		cmd = 'shutdown -s -t 1';
 	} else {
 		throw new Error('Unknown OS!');
 	}
@@ -24,9 +24,9 @@ module.exports.reboot = function (cb) {
 	var cmd = '';
 	
 	if(isLinux() || isOsx()) {
-		cmd = 'sudo reboot';
+		cmd = 'sudo shutdown -r -t 1';
 	} else if(isWindows()) {
-		cmd = 'shutdown -r -t 0';
+		cmd = 'shutdown -r -t 1';
 	} else {
 		throw new Error('Unknown OS!');
 	}
