@@ -16,7 +16,7 @@ module.exports.shutdown = function (cb) {
 	}
 
 	cp.exec(cmd, function (err, stdout, stderr) {
-		cb(err, stout, stderr);
+		cb(err, stdout, stderr);
 	});
 };
 
@@ -32,7 +32,7 @@ module.exports.reboot = function (cb) {
 	}
 
 	cp.exec(cmd, function (err, stdout, stderr) {
-		cb(err, stout, stderr);
+		cb(err, stdout, stderr);
 	});
 
 };
